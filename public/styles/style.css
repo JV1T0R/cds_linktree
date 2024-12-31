@@ -1,0 +1,47 @@
+/* Google Fonts (Yellowtail) */
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
+* {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+body {
+  background-color: #660000;
+}
+
+header h1 {
+  font-family: "Yellowtail", cursive;
+  color: #FF9600;
+  text-shadow: 3px 5px #000000;
+  font-size: 4em;
+  font-weight: bold;
+}
+@media (max-width: 374px) and (min-width: 320px) {
+  header h1 {
+    font-size: 2.5em;
+  }
+}
+@media (max-width: 767px) and (min-width: 375px) {
+  header h1 {
+    font-size: 3em;
+  }
+}
+@media (max-width: 900px) and (min-width: 768px) {
+  header h1 {
+    font-size: 3.5em;
+  }
+}
+
+.btns .btn-custom {
+  background-color: #660000;
+  border-color: #FF9600;
+  font-family: "Roboto", sans-serif;
+  color: #FF9600;
+  box-shadow: 0px 6px 10px #000000;
+}
+.btns .btn-custom:hover, .btns .btn-custom:active {
+  cursor: pointer;
+  box-shadow: 5px 10px 10px #000000;
+  transition: 0.5s;
+}/*# sourceMappingURL=style.css.map */
