@@ -1,5 +1,5 @@
-@mixin mobile-sm {
-    @media (max-width: 374px) {
+@mixin tablet {
+    @media (min-width: 768px) and (max-width: 1024px) {
         @content;
     }
 }
@@ -10,8 +10,8 @@
     }
 }
 
-@mixin tablet {
-    @media (min-width: 768px) and (max-width: 1024px) {
+@mixin mobile-sm {
+    @media (max-width: 374px) {
         @content;
     }
 }
