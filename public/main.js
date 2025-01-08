@@ -1,5 +1,5 @@
-function gotoLink(Link){
-    window.open(Link.value);
+function gotoLink(link){
+    window.open(link.value);
 };
 
 function copyPixKey() {
