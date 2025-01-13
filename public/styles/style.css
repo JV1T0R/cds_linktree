@@ -54,6 +54,7 @@ header h1 {
   border-color: #FF9600;
   font-family: "Roboto", sans-serif;
   color: #FF9600;
+  text-shadow: 2px 2px #000000;
   box-shadow: 0px 6px 10px #000000;
 }
 .btns .btn-custom:hover, .btns .btn-custom:active {
