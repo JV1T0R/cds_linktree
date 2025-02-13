@@ -9,24 +9,23 @@
 body {
   background-color: #660000;
 }
-
-header img {
+body header img {
   width: 250px;
   height: 250px;
 }
 @media (min-width: 375px) and (max-width: 767px) {
-  header img {
+  body header img {
     width: 200px;
     height: 200px;
   }
 }
 @media (max-width: 374px) {
-  header img {
+  body header img {
     width: 200px;
     height: 200px;
   }
 }
-header h1 {
+body header h1 {
   font-family: "Yellowtail", cursive;
   color: #FF9600;
   text-shadow: 3px 5px #000000;
@@ -34,22 +33,21 @@ header h1 {
   font-weight: bold;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  header h1 {
+  body header h1 {
     font-size: 3.5em;
   }
 }
 @media (min-width: 375px) and (max-width: 767px) {
-  header h1 {
+  body header h1 {
     font-size: 3em;
   }
 }
 @media (max-width: 374px) {
-  header h1 {
+  body header h1 {
     font-size: 2.5em;
   }
 }
-
-.btns .btn-custom {
+body .btns .btn-custom {
   background-color: #660000;
   border-color: #FF9600;
   font-family: "Roboto", sans-serif;
@@ -57,8 +55,15 @@ header h1 {
   text-shadow: 2px 2px #000000;
   box-shadow: 0px 6px 10px #000000;
 }
-.btns .btn-custom:hover, .btns .btn-custom:active {
+body .btns .btn-custom:hover, body .btns .btn-custom:active {
   cursor: pointer;
   box-shadow: 5px 10px 10px #000000;
   transition: 0.5s;
+}
+body .modal-footer .pix-btn:hover, body .modal-footer .pix-btn:active {
+  cursor: pointer;
+  background-color: #660000;
+  transition: 0.5s;
+  border-color: #FF9600;
+  color: #FF9600;
 }/*# sourceMappingURL=style.css.map */
