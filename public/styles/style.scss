@@ -88,16 +88,18 @@ body {
             }
         }
     }
-}
 
-/* Custom Copy Button for Pix Key Class */
-.pix-btn{
-    &:hover,
-    &:active {
-        cursor: pointer;
-        background-color: #660000;
-        transition: 0.5s;
-        border-color: #FF9600;
-        color: #FF9600;
+    .modal-footer {
+        /* Custom Copy Button for Pix Key Class */
+        .pix-btn{
+            &:hover,
+            &:active {
+                cursor: pointer;
+                background-color: #660000;
+                transition: 0.5s;
+                border-color: #FF9600;
+                color: #FF9600;
+            }
+        }
     }
 }

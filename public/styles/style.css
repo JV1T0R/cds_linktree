@@ -82,9 +82,10 @@ body .card-bg .btns .btn-custom i {
   top: 50%;
   transform: translateY(-50%);
 }
-
-/* Custom Copy Button for Pix Key Class */
-.pix-btn:hover, .pix-btn:active {
+body .modal-footer {
+  /* Custom Copy Button for Pix Key Class */
+}
+body .modal-footer .pix-btn:hover, body .modal-footer .pix-btn:active {
   cursor: pointer;
   background-color: #660000;
   transition: 0.5s;
