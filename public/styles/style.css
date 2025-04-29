@@ -1,3 +1,4 @@
+/* Media Queries */
 /* Google Fonts (Yellowtail) */
 @import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
 * {
@@ -8,59 +9,82 @@
 
 body {
   background-color: #660000;
+  /* Custom Card Background Class */
 }
-body header img {
+body .card-bg {
+  background: rgba(175, 33, 25, 0.2);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  box-shadow: 0 0 5px 1.6px rgba(0, 0, 0, 0.2);
+}
+body .card-bg header img {
   width: 250px;
   height: 250px;
 }
 @media (min-width: 375px) and (max-width: 767px) {
-  body header img {
+  body .card-bg header img {
     width: 200px;
     height: 200px;
   }
 }
 @media (max-width: 374px) {
-  body header img {
+  body .card-bg header img {
     width: 200px;
     height: 200px;
   }
 }
-body header h1 {
+body .card-bg header h1 {
   font-family: "Yellowtail", cursive;
   color: #FF9600;
   text-shadow: 3px 5px #000000;
-  font-size: 4em;
+  font-size: 3.5em;
   font-weight: bold;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
-  body header h1 {
-    font-size: 3.5em;
-  }
-}
-@media (min-width: 375px) and (max-width: 767px) {
-  body header h1 {
+  body .card-bg header h1 {
     font-size: 3em;
   }
 }
-@media (max-width: 374px) {
-  body header h1 {
+@media (min-width: 375px) and (max-width: 767px) {
+  body .card-bg header h1 {
     font-size: 2.5em;
+    text-shadow: 2px 3px #000000;
   }
 }
-body .btns .btn-custom {
+@media (max-width: 374px) {
+  body .card-bg header h1 {
+    font-size: 2.2em;
+    text-shadow: 2px 3px #000000;
+  }
+}
+body .card-bg .btns {
+  /* Custom Button for Links Class */
+}
+body .card-bg .btns .btn-custom {
   background-color: #660000;
-  border-color: #FF9600;
   font-family: "Roboto", sans-serif;
   color: #FF9600;
-  text-shadow: 2px 2px #000000;
-  box-shadow: 0px 6px 10px #000000;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.5rem 1rem;
+  padding-left: 3rem;
 }
-body .btns .btn-custom:hover, body .btns .btn-custom:active {
+body .card-bg .btns .btn-custom:hover, body .card-bg .btns .btn-custom:active {
   cursor: pointer;
-  box-shadow: 5px 10px 10px #000000;
+  box-shadow: 5px 6px 6px #000000;
   transition: 0.5s;
 }
-body .modal-footer .pix-btn:hover, body .modal-footer .pix-btn:active {
+body .card-bg .btns .btn-custom i {
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+/* Custom Copy Button for Pix Key Class */
+.pix-btn:hover, .pix-btn:active {
   cursor: pointer;
   background-color: #660000;
   transition: 0.5s;

@@ -1,3 +1,4 @@
+/* Media Queries */
 @use 'mixins';
 
 /* Google Fonts (Yellowtail) */
@@ -12,71 +13,91 @@
 body {
     background-color: #660000;
 
-    header {
-        img {
-            width: 250px;
-            height: 250px;
+    /* Custom Card Background Class */
+    .card-bg{
+        background: #af211933;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        box-shadow: 0 0 5px 1.6px #00000033;
 
-            @include mixins.mobile-md {
-                width: 200px;
-                height: 200px;
+        header {
+            img {
+                width: 250px;
+                height: 250px;
+
+                @include mixins.mobile-md {
+                    width: 200px;
+                    height: 200px;
+                }
+
+                @include mixins.mobile-sm {
+                    width: 200px;
+                    height: 200px;
+                }  
             }
 
-            @include mixins.mobile-sm {
-                width: 200px;
-                height: 200px;
-            }  
-        }
-
-        h1 {
-            font-family: "Yellowtail", cursive;
-            color: #FF9600;
-            text-shadow: 3px 5px #000000;
-            font-size: 4em;
-            font-weight: bold;
-
-            @include mixins.tablet {
-                font-size: 3.5em;
-            }
-
-            @include mixins.mobile-md {
-                font-size: 3em;
-            }
-
-            @include mixins.mobile-sm {
-                font-size: 2.5em;
-            }    
-        }
-    }
-
-    .btns {
-        .btn-custom {
-            background-color: #660000;
-            border-color: #FF9600;
-            font-family: 'Roboto', sans-serif;
-            color: #FF9600;
-            text-shadow: 2px 2px #000000;
-            box-shadow: 0px 6px 10px #000000;
-
-            &:hover,
-            &:active {
-                cursor: pointer;
-                box-shadow: 5px 10px 10px #000000;
-                transition: 0.5s;
-            }
-        }
-    }
-
-    .modal-footer {
-        .pix-btn{
-            &:hover,
-            &:active {
-                cursor: pointer;
-                background-color: #660000;
-                transition: 0.5s;
-                border-color: #FF9600;
+            h1 {
+                font-family: "Yellowtail", cursive;
                 color: #FF9600;
+                text-shadow: 3px 5px #000000;
+                font-size: 3.5em;
+                font-weight: bold;
+
+                @include mixins.tablet {
+                    font-size: 3em;
+                }
+
+                @include mixins.mobile-md {
+                    font-size: 2.5em;
+                    text-shadow: 2px 3px #000000;   
+                }
+
+                @include mixins.mobile-sm {
+                    font-size: 2.2em;
+                    text-shadow: 2px 3px #000000;
+                }    
             }
         }
+
+        .btns {
+            /* Custom Button for Links Class */
+            .btn-custom {
+                background-color: #660000;
+                font-family: 'Roboto', sans-serif;
+                color: #FF9600;
+                position: relative; 
+                display: flex; 
+                align-items: center; 
+                justify-content: center; 
+                padding: 0.5rem 1rem; 
+                padding-left: 3rem; 
+
+                &:hover,
+                &:active {
+                    cursor: pointer;
+                    box-shadow: 5px 6px 6px #000000;
+                    transition: 0.5s;
+                }
+
+                i {
+                    position: absolute;
+                    left: 1rem; 
+                    top: 50%; 
+                    transform: translateY(-50%);
+                }
+            }
+        }
+    }
+}
+
+/* Custom Copy Button for Pix Key Class */
+.pix-btn{
+    &:hover,
+    &:active {
+        cursor: pointer;
+        background-color: #660000;
+        transition: 0.5s;
+        border-color: #FF9600;
+        color: #FF9600;
     }
 }
