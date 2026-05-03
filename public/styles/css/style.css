@@ -1,44 +1,92 @@
-/* Media Queries */
-/* Google Fonts (Yellowtail) */
-@import url("https://fonts.googleapis.com/css2?family=Yellowtail&display=swap");
-* {
+@charset "UTF-8";
+/* ============================================
+   CANTINHO DE SABORES — LINKTREE
+   ============================================ */
+@import url("https://fonts.googleapis.com/css2?family=Yellowtail&family=Nunito:wght@600;700&display=swap");
+:root {
+  --red-deep: #1a0000;
+  --red-dark: #3d0000;
+  --red-main: #660000;
+  --red-mid: #8b1a1a;
+  --red-hover: #7a0808;
+  --orange: #FF9600;
+  --gold: #FFB830;
+  --amber-light: #FFD580;
+  --glass-bg: rgba(120, 18, 18, 0.22);
+  --glass-border: rgba(255, 150, 0, 0.18);
+  --shadow-deep: rgba(0, 0, 0, 0.6);
+  --shadow-glow: rgba(255, 150, 0, 0.18);
+}
+
+*, *::before, *::after {
   margin: 0;
   padding: 0;
-  border: 0;
+  box-sizing: border-box;
 }
 
 body {
   background-color: #660000;
-  /* Custom Card Background Class */
+  background-image: radial-gradient(ellipse at 15% 15%, rgba(160, 40, 10, 0.45) 0%, transparent 55%), radial-gradient(ellipse at 85% 85%, rgba(80, 0, 0, 0.55) 0%, transparent 50%), radial-gradient(ellipse at 50% 100%, rgba(30, 0, 0, 0.7) 0%, transparent 60%), linear-gradient(155deg, #8b2020 0%, #660000 28%, #3d0000 62%, #1a0000 100%);
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+}
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background-image: radial-gradient(circle at 20% 80%, rgba(255, 120, 0, 0.04) 0%, transparent 40%), radial-gradient(circle at 80% 20%, rgba(255, 80, 0, 0.03) 0%, transparent 35%);
+  pointer-events: none;
+  z-index: 0;
+}
+body main {
+  position: relative;
+  z-index: 1;
 }
 body .card-bg {
-  background: rgba(175, 33, 25, 0.2);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
-  box-shadow: 0 0 5px 1.6px rgba(0, 0, 0, 0.2);
+  background: rgba(120, 18, 18, 0.22);
+  backdrop-filter: blur(28px) saturate(1.5);
+  -webkit-backdrop-filter: blur(28px) saturate(1.5);
+  border: 1px solid rgba(255, 150, 0, 0.18);
+  box-shadow: 0 10px 48px rgba(0, 0, 0, 0.55), 0 2px 0 rgba(255, 160, 40, 0.07) inset, 0 -1px 0 rgba(0, 0, 0, 0.35) inset;
+  width: 100%;
+  max-width: 490px;
+  animation: cardEntrance 0.85s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
-body .card-bg header img {
+body .card-bg .logo-wrapper {
+  display: inline-block;
+}
+body .card-bg .logo-float {
   width: 250px;
   height: 250px;
+  animation: float 7s ease-in-out infinite;
+  filter: drop-shadow(0 10px 18px rgba(0, 0, 0, 0.55)) drop-shadow(0 0 22px rgba(255, 150, 0, 0.12));
+  transition: filter 0.4s ease;
+}
+body .card-bg .logo-float:hover {
+  filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.6)) drop-shadow(0 0 30px rgba(255, 150, 0, 0.25));
 }
 @media (min-width: 375px) and (max-width: 767px) {
-  body .card-bg header img {
+  body .card-bg .logo-float {
     width: 200px;
     height: 200px;
   }
 }
 @media (max-width: 374px) {
-  body .card-bg header img {
-    width: 200px;
-    height: 200px;
+  body .card-bg .logo-float {
+    width: 180px;
+    height: 180px;
   }
 }
 body .card-bg header h1 {
   font-family: "Yellowtail", cursive;
   color: #FF9600;
-  text-shadow: 3px 5px #000000;
+  text-shadow: 2px 4px 0 #000000, 0 0 32px rgba(255, 150, 0, 0.28);
   font-size: 3.5em;
-  font-weight: bold;
+  font-weight: 400;
+  letter-spacing: 0.01em;
+  line-height: 1.1;
+  animation: titleEntrance 0.9s 0.18s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 @media (min-width: 768px) and (max-width: 1024px) {
   body .card-bg header h1 {
@@ -48,47 +96,206 @@ body .card-bg header h1 {
 @media (min-width: 375px) and (max-width: 767px) {
   body .card-bg header h1 {
     font-size: 2.5em;
-    text-shadow: 2px 3px #000000;
+    text-shadow: 2px 3px 0 #000000, 0 0 22px rgba(255, 150, 0, 0.25);
   }
 }
 @media (max-width: 374px) {
   body .card-bg header h1 {
-    font-size: 2.2em;
-    text-shadow: 2px 3px #000000;
+    font-size: 2.1em;
+    text-shadow: 2px 3px 0 #000000, 0 0 20px rgba(255, 150, 0, 0.22);
   }
 }
 body .card-bg .btns {
-  /* Custom Button for Links Class */
+  width: 100%;
 }
 body .card-bg .btns .btn-custom {
-  background-color: #660000;
-  font-family: "Roboto", sans-serif;
+  background: linear-gradient(145deg, #660000 0%, #8b1a1a 100%);
+  font-family: "Nunito", sans-serif;
+  font-size: 1.2rem;
+  font-weight: 700;
   color: #FF9600;
   position: relative;
   display: flex;
   align-items: center;
   justify-content: center;
-  padding: 0.5rem 1rem;
-  padding-left: 3rem;
+  padding: 0.7rem 1.5rem 0.7rem 3.1rem;
+  border: 1px solid rgba(255, 150, 0, 0.22);
+  border-radius: 10px;
+  overflow: hidden;
+  letter-spacing: 0.04em;
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.32s ease, border-color 0.32s ease, background 0.32s ease, color 0.25s ease;
 }
-body .card-bg .btns .btn-custom:hover, body .card-bg .btns .btn-custom:active {
-  cursor: pointer;
-  box-shadow: 5px 6px 6px #000000;
-  transition: 0.5s;
+body .card-bg .btns .btn-custom::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -130%;
+  width: 55%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent 0%, rgba(255, 200, 100, 0.13) 50%, transparent 100%);
+  transition: left 0.55s ease;
+  pointer-events: none;
 }
-body .card-bg .btns .btn-custom i {
+body .card-bg .btns .btn-custom::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 0%;
+  height: 1.5px;
+  background: linear-gradient(90deg, transparent, #FF9600, transparent);
+  transition: width 0.4s ease;
+  border-radius: 99px;
+  pointer-events: none;
+}
+body .card-bg .btns .btn-custom:hover {
+  transform: translateY(-4px) scale(1.018);
+  background: linear-gradient(145deg, #7a0808 0%, #9e2020 100%);
+  border-color: rgba(255, 150, 0, 0.5);
+  color: #FFB830;
+  box-shadow: 0 12px 32px rgba(0, 0, 0, 0.52), 0 0 0 1px rgba(255, 150, 0, 0.35), 0 0 22px rgba(255, 150, 0, 0.1);
+}
+body .card-bg .btns .btn-custom:hover::before {
+  left: 160%;
+}
+body .card-bg .btns .btn-custom:hover::after {
+  width: 68%;
+}
+body .card-bg .btns .btn-custom:hover .btn-icon {
+  transform: translateY(-50%) scale(1.22) rotate(-3deg);
+}
+body .card-bg .btns .btn-custom:active {
+  transform: translateY(-1px) scale(1.006);
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.45), 0 0 0 1px rgba(255, 150, 0, 0.3);
+}
+body .card-bg .btns .btn-custom .btn-icon {
   position: absolute;
   left: 1rem;
   top: 50%;
   transform: translateY(-50%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform 0.32s cubic-bezier(0.34, 1.56, 0.64, 1);
 }
-body .modal-footer {
-  /* Custom Copy Button for Pix Key Class */
+@media (max-width: 374px) {
+  body .card-bg .btns .btn-custom {
+    font-size: 1.05rem;
+  }
 }
-body .modal-footer .pix-btn:hover, body .modal-footer .pix-btn:active {
-  cursor: pointer;
-  background-color: #660000;
-  transition: 0.5s;
-  border-color: #FF9600;
+body .card-bg .btns .btn-animate-1 {
+  animation: btnSlideIn 0.65s 0.42s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+body .card-bg .btns .btn-animate-2 {
+  animation: btnSlideIn 0.65s 0.58s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+body .card-bg .btns .btn-animate-3 {
+  animation: btnSlideIn 0.65s 0.74s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+body .card-bg .btns .btn-animate-4 {
+  animation: btnSlideIn 0.65s 0.9s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+body .pix-modal-content {
+  background: linear-gradient(150deg, #3a0000 0%, #220000 100%);
+  border: 1px solid rgba(255, 150, 0, 0.2);
+  box-shadow: 0 24px 64px rgba(0, 0, 0, 0.75);
+  color: #f0d0a0;
+}
+body .pix-modal-header {
+  border-bottom: 1px solid rgba(255, 150, 0, 0.14);
+}
+body .pix-modal-title {
+  font-family: "Yellowtail", cursive;
+  font-size: 1.65rem;
   color: #FF9600;
+  font-weight: 400;
+}
+body .pix-modal-body {
+  color: #e5c07a;
+  line-height: 2;
+  font-family: "Nunito", sans-serif;
+}
+body .pix-modal-body strong {
+  color: #FF9600;
+}
+body .pix-modal-footer {
+  border-top: 1px solid rgba(255, 150, 0, 0.14);
+  flex-direction: column;
+  gap: 0.6rem;
+}
+body .pix-btn {
+  background: transparent;
+  border: 1px solid rgba(255, 150, 0, 0.38);
+  color: #FF9600;
+  font-family: "Nunito", sans-serif;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  padding: 0.5rem 1.3rem;
+  border-radius: 8px;
+  transition: background 0.28s ease, border-color 0.28s ease, color 0.25s ease, transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.28s ease;
+}
+body .pix-btn .pix-btn-icon {
+  display: flex;
+  align-items: center;
+  transition: transform 0.28s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+body .pix-btn:hover {
+  background: #660000;
+  border-color: #FF9600;
+  color: #FFB830;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.4), 0 0 14px rgba(255, 150, 0, 0.15);
+}
+body .pix-btn:hover .pix-btn-icon {
+  transform: scale(1.18);
+}
+body .pix-btn:active {
+  transform: translateY(0);
+}
+
+@keyframes cardEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(28px) scale(0.96);
+    filter: blur(3px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    filter: blur(0);
+  }
+}
+@keyframes titleEntrance {
+  from {
+    opacity: 0;
+    transform: translateY(14px);
+    filter: blur(5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+@keyframes btnSlideIn {
+  from {
+    opacity: 0;
+    transform: translateX(-22px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-9px);
+  }
 }/*# sourceMappingURL=style.css.map */
